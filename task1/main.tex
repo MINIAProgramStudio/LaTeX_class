@@ -11,6 +11,7 @@
 
 \usepackage{amsmath}
 \usepackage{amssymb}
+\renewcommand{\theequation}{\arabic{equation}}
 
 \usepackage{fontspec}
 \setmainfont{Times New Roman}[WordSpace=1]
@@ -50,6 +51,7 @@
     {}              % head spec (empty = default)
 \theoremstyle{proofstyle}
 \newtheorem*{myproof}{Доведення}
+\pretocmd{\endmyproof}{\hfill$\square$}{}{}
 
 \begin{document}
 \abovedisplayskip=5pt
@@ -80,7 +82,7 @@ $$p_a(z)=(z-a)(z^2-1).$$
 перетинаються лише при $z = 1$ (відповідно $z = -1$).
 Більше того,
 для $\theta \notin \left\{0, \frac{\pi}{2}\right\}$,
-вони розходяться по-різному для \infty\ в одному з напрямків
+вони розходяться по-різному для $\infty$ в одному з напрямків
 $$\lim_{\substack{|a|\longrightarrow +\infty \\ a\in\Sigma_{\pm1,\theta}}} \arg a = \frac{-2\theta+2k\pi}{5}, k = 0,1,2,3,4.$$
 Для $\theta = 0$, (відповідно $\theta = \frac{\pi}{2}$), 
 один промінь $\Sigma_{1,\theta}$ (відповідно $\Sigma_{-1,\theta}$) розходиться до $z = -1$ (відповідно $z= 1 $).
@@ -153,6 +155,36 @@ $$\left(\overline{\Sigma_{1, \theta}} \backslash \Sigma_{1, \theta}\right) \cap 
 Нехай $\epsilon > 0$ так, що $0<\theta - 2\epsilon$.
 Для $a \in \mathbb{C}$ задовольняє $\pi - \epsilon < \arg a < \pi$,
 $0 < \theta - 2 \epsilon < \theta + 2 \arg a + \arg\int_0^1\sqrt{t(1-t)}\sqrt{t(a-1)+2}dt < \frac{\pi}{2}+\theta-\frac{\epsilon}{2}<\pi$,
-що суперечить \ref{equation_1}
+що суперечить (\ref{equation_1}).
+Інші випадки подібні.
+Таким чином, будь-який промінь з $\Sigma_{\pm 1, \theta}$ повинен розходитись на $\infty$.
+Випадок $\theta = 0$ є простішим.
+
+Якщо $a \rightarrow \infty$, тоді $|f_{1, \theta}(a)| \rightarrow \infty$; оскільки $\Re f_{1_\theta}(a) = 0$, 
+отримуємо $|\Im f_{1, \theta}(a)| \rightarrow +\infty$.
+Звідси випливає, що
+$$\arg(f(a)) \sim \arg\left(\frac{4}{15}e^{i \theta}a^{5/2}\right) \rightarrow \frac{\pi}{2} + k\pi, k \in \mathbb{Z} as a \rightarrow \infty$$
+Ми отримуємо поведінку будь-якої дуги $\Sigma_{1, \theta}$, яка розходиться до $\infty$.
+Зокрема, з принципу максимуму модуля, два промені з $\Sigma_{, \theta}$ не можуть розходитись у $\infty$.
+$\Sigma_{1, \theta}$ не можуть розходитись до $\infty$ в одному напрямку.
+
+Якщо $\Sigma_{1, \theta}$ містить регулярну точку $z_0$ (наприклад, $\Im z_0 > 0$),
+яка не належить дугам $\Sigma_{1, \theta}$, що виходять з точки $a=1$.
+Два промені кривої набору рівнів $\gamma$, що проходять через $z_0$ розходяться до $\infty$ у двох різних напрямках.
+Звідси випливає, що $\gamma$ має проходити через $z_1 = 1 + iy$, для деяких $y > 0$,
+або $z_1 = y$, для деяких $y>1$.
+Легко перевірити, що в обох випадках, для будь-якого вибору аргументу,
+$$\Re \int_1^{z_1}\left(e^{i\theta}\sqrt{p_{z_1}(t)}dt\right) \neq 0;$$
+і отримуємо протиріччя. Таким чином,
+$\Sigma_{1, \theta}$ утворюється лише двома кривими, що проходять через $a = 1$.
+Таку саму ідею дає структура $\Sigma_{-1, \theta};$
+навіть більше, з співвідношення
+\begin{equation}
+    \Re f_{\pm 1, \theta}(a) = 0 \Longleftrightarrow \Re f_{\pm 1, \frac{\pi}{2} - \theta}(-\overline{a}) = 0
+    \label{equation_2}
+\end{equation}
+доступних для довільного $\theta \in [\pi/4, \pi/2[$,
+можна легко побачити що $\Sigma_{-1, \frac{\pi}{2}-\theta}$ і $\Sigma_{1, \theta}$ симетричні відносно уявної осі (\ref{equation_2}).
+Це приводить нас до того, щоб обмежити наше дослідження випадком.
 \end{myproof}
 \end{document}
