@@ -61,9 +61,9 @@
 \quad Для $\theta \in [0, \pi/2[$, розглянемо множини
 {
 \begin{align*}
-    \Sigma_{1,\theta} &= \left\{a \in \mathbb{C} \backslash ]-\infty, -1]: \mathfrak{R} \left(\int_{[1,a]}e^{i\theta}\sqrt{p_a(z)}dz\right)=0\right\};\\
-    \Sigma_{-1,\theta} &= \left\{a \in \mathbb{C} \backslash [1, +\infty[ : \mathfrak{R} \left(\int_{[-1,a]}e^{i\theta}\sqrt{p_a(z)}dz\right)=0\right\};\\
-    \Sigma_\theta &= \left\{a \in \mathbb{C} \backslash [-1, 1] : \mathfrak{R} \left(\int_{[-1,1]}e^{i\theta}\sqrt{p_a(z)}dz\right)=0\right\};
+    \Sigma_{1,\theta} &= \left\{a \in \mathbb{C} \backslash ]-\infty, -1]: \Re \left(\int_{[1,a]}e^{i\theta}\sqrt{p_a(z)}dz\right)=0\right\};\\
+    \Sigma_{-1,\theta} &= \left\{a \in \mathbb{C} \backslash [1, +\infty[ : \Re \left(\int_{[-1,a]}e^{i\theta}\sqrt{p_a(z)}dz\right)=0\right\};\\
+    \Sigma_\theta &= \left\{a \in \mathbb{C} \backslash [-1, 1] : \Re \left(\int_{[-1,1]}e^{i\theta}\sqrt{p_a(z)}dz\right)=0\right\};
 \end{align*}
 }
 де $p_a(z)$ --- комплексний многочлен, визначений формулою
@@ -115,6 +115,7 @@ $$f_{1, \theta}(a) = \int\nolimits_1^a e^{i\theta}\sqrt{p_a(t)}dt, a \in \mathbb
 \begin{multline}
     f_{1, \theta}(a) = ie^{i\theta}(a-1)^2 \int\nolimits_{0}^1\sqrt{t(1-t)}\sqrt{t(a-1)+2}dt = (a-1)^2 g(a);\\
     g(1) \neq 0.
+\label{equation_1}
 \end{multline}
 Очевидно, що:
 $$\forall a \in \mathbb{C} \backslash ]-\infty, -1], \{t(a-1)+2; t\in[0,1]\} = [2,a+1] \subset \mathbb{C} \backslash ]-\infty, 0].$$
@@ -122,24 +123,36 @@ $$\forall a \in \mathbb{C} \backslash ]-\infty, -1], \{t(a-1)+2; t\in[0,1]\} = [
 $f_{1, \theta}$ та $g$ є однозначними аналітичними функціями в $\mathbb{C} \backslash ]-\infty, -1]$.
 
 Припустимо, що для деяких $a \in \mathbb{C} \backslash ]-\infty, -1], a \neq 1$,
-$$u(a) = \mathfrak{R} f_{1, \theta}(a) = 0; f'_{1, \theta}(a) = 0.$$
+$$u(a) = \Re f_{1, \theta}(a) = 0; f'_{1, \theta}(a) = 0.$$
 Тоді,
 $$(a-1)^3 g'(a) + 2f_{1, \theta}(a) = 0.$$
 Беручи справжні деталі, ми отримуємо
 \begin{align*}
-    0 &= \int\nolimits_0^1\sqrt{t(1-t)}\mathfrak{I}\left(e^{i\theta}(a-1)^2\sqrt{t(a-1)+2}\right)dt;\\
-    0 &= \mathfrak{R}\left((a-1)^3 g'(a)\right) = \int\nolimits_0^1 t\sqrt{t(1-t)}\mathfrak{I}\left(\frac{e^{i\theta}(a-1)^3}{2\sqrt{t(a-1)+2}}\right)dt.
+    0 &= \int\nolimits_0^1\sqrt{t(1-t)}\Im\left(e^{i\theta}(a-1)^2\sqrt{t(a-1)+2}\right)dt;\\
+    0 &= \Re\left((a-1)^3 g'(a)\right) = \int\nolimits_0^1 t\sqrt{t(1-t)}\Im\left(\frac{e^{i\theta}(a-1)^3}{2\sqrt{t(a-1)+2}}\right)dt.
 \end{align*}
 
 За неперервністю функцій всередині цих інтегралів на відрізку $[0,1]$,
 існують $t_1, t_2 \in [0,1]$ такі що
-$$\mathfrak{I}\left(e^{i\theta}(a-1)^2\sqrt{t_1(a-1)+2}\right) = \mathfrak{I} \left(\frac{e^{i\theta}(a-1)^3}{2\sqrt{t_2(a-1)+2}}\right) = 0;$$
+$$\Im\left(e^{i\theta}(a-1)^2\sqrt{t_1(a-1)+2}\right) = \Im \left(\frac{e^{i\theta}(a-1)^3}{2\sqrt{t_2(a-1)+2}}\right) = 0;$$
 а потім
 $$e^{2i\theta}(a-1)^4(t_1(a-1)+2) > 0, \left(\frac{e^{2i\theta}(a-1)}{t_2(a-1)+2}\right) > 0.$$
-яка не може виконуватись, оскільки, якщо $\mathfrak{I} a > 0$, то
+яка не може виконуватись, оскільки, якщо $\Im a > 0$, то
 \begin{multline*}
     0 < \arg(t_1(a-1)+2) + \arg((t_2(a-1)+2)) \\
     < 2\arg(a+1) < arg \left((a-1)^2\right)<2\pi.
 \end{multline*}
+Випадок $\Im a < 0$ є аналогічним, тоді як випадок $a \in \mathbb{R}$ можна легко відкинути.
+Таким чином, $a=1$ є єдиною критичною точкою $\Re f_{1, \theta}$.
+Оскільки $f''_{1, \theta}(1) = 2g(1) \neq 0$,
+вводиио локальну поведінку $\Sigma_{1, \theta}$ поблизу $a = 1$.
+
+Припустимо, що для деяких $\theta \in ]0, \frac{\pi}{2}[$ промінь $\Sigma_{\pm 1, \theta}$ 
+розходиться до певного моменту в $]-\infty, -1[;$ або приклад,
+$$\left(\overline{\Sigma_{1, \theta}} \backslash \Sigma_{1, \theta}\right) \cap \left\{z \in \overline{\mathbb{C}} : \Im z \geq 0\right\} = \{x_0\}$$
+Нехай $\epsilon > 0$ так, що $0<\theta - 2\epsilon$.
+Для $a \in \mathbb{C}$ задовольняє $\pi - \epsilon < \arg a < \pi$,
+$0 < \theta - 2 \epsilon < \theta + 2 \arg a + \arg\int_0^1\sqrt{t(1-t)}\sqrt{t(a-1)+2}dt < \frac{\pi}{2}+\theta-\frac{\epsilon}{2}<\pi$,
+що суперечить \ref{equation_1}
 \end{myproof}
 \end{document}
