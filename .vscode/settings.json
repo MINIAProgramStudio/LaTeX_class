@@ -6,11 +6,33 @@
             "args": [
                 "-synctex=1",
                 "-interaction=nonstopmode",
+                "-output-directory=%DIR%",
                 "%DOC%"
             ]
+        },
+        {
+            "name": "bibtex8",
+            "command": "bibtex8",
+            "args": ["%DOC%"],
+            "env": {
+                "BIBINPUTS": "%DIR%;"
+            }
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": ["%DOC%"]
         }
     ],
     "latex-workshop.latex.recipes": [
+        {
+            "name": "lualatex + biber",
+            "tools": ["lualatex", "biber", "lualatex", "lualatex"]
+        },
+        {
+            "name": "lualatex + bibtex8",
+            "tools": ["lualatex", "bibtex8", "lualatex", "lualatex"]
+        },
         {
             "name": "lualatex",
             "tools": ["lualatex"]
