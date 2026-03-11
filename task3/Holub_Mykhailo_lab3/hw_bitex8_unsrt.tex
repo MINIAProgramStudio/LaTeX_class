@@ -1,0 +1,41 @@
+%! TEX program = lualatex
+\documentclass[14pt]{extarticle}
+
+\usepackage[ukrainian]{babel}
+\usepackage[margin=2cm]{geometry}
+
+\usepackage{fontspec}
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\defaultfontfeatures{Ligatures={TeX}}
+
+\usepackage[hyphens]{url}
+
+\addto\captionsukrainian{\renewcommand{\refname}{Список використаних джерел}}
+
+\emergencystretch=1em
+\hbadness=10000
+\pagestyle{empty}
+
+\begin{document}
+
+\section*{Огляд літератури (bibtex8, стиль unsrt)}
+
+Загальні принципи адитивних технологій описано у~\cite{Gibson2021}.
+Проектування FFF-принтерів розглянуто у~\cite{Soni2021},
+а порівняльний аналіз картезіанських та дельта-принтерів~--- у~\cite{Schmitt2018}.
+Типові дефекти FDM-друку систематизовано у~\cite{Baechle2022}.
+Методи виявлення помилок на основі комп'ютерного зору досліджено
+у~\cite{Baumann2016, Langeland2020, Paulsen2019}.
+Машинне навчання для контролю якості поверхні застосовано у~\cite{Kadam2021}.
+Методи оцінки якості зображень описано у~\cite{Crete2007, Wang2005}.
+Основи цифрової обробки зображень викладено у~\cite{Gonzalez2018}.
+Технічні характеристики комерційних 3D-принтерів наведено у~\cite{BambuLabA1Mini}.
+Моделювання вбудованого 3D-друку розглянуто у~\cite{VanDriel2025}.
+
+\nocite{*}
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

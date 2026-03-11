@@ -1,0 +1,41 @@
+%! TEX program = lualatex
+\documentclass[14pt]{extarticle}
+
+\usepackage[ukrainian]{babel}
+\usepackage[margin=2cm]{geometry}
+
+\usepackage{fontspec}
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\defaultfontfeatures{Ligatures={TeX}}
+
+\usepackage{csquotes}
+
+\usepackage[backend=biber, style=authoryear, sorting=nyt]{biblatex}
+\addbibresource{references.bib}
+
+\emergencystretch=1em
+\hbadness=10000
+\pagestyle{empty}
+
+\begin{document}
+
+\section*{Огляд літератури (biber, стиль authoryear)}
+
+Загальні принципи адитивних технологій описано у~\parencite{Gibson2021}.
+Проектування FFF-принтерів розглянуто у~\parencite{Soni2021},
+а порівняльний аналіз картезіанських та дельта-принтерів~--- у~\parencite{Schmitt2018}.
+Типові дефекти FDM-друку систематизовано у~\parencite{Baechle2022}.
+Методи виявлення помилок на основі комп'ютерного зору досліджено
+у~\parencite{Baumann2016, Langeland2020, Paulsen2019}.
+Машинне навчання для контролю якості поверхні застосовано у~\parencite{Kadam2021}.
+Методи оцінки якості зображень описано у~\parencite{Crete2007, Wang2005}.
+Основи цифрової обробки зображень викладено у~\parencite{Gonzalez2018}.
+Технічні характеристики комерційних 3D-принтерів наведено у~\parencite{BambuLabA1Mini}.
+Моделювання вбудованого 3D-друку розглянуто у~\parencite{VanDriel2025}.
+
+\nocite{*}
+
+\printbibliography[title={Список використаних джерел}]
+
+\end{document}
